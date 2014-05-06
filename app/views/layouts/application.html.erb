@@ -8,6 +8,12 @@
 </head>
 <body>
 
+  <div>
+    <% if flash[:notice] %>
+      <p><%= flash[:notice] %></p>
+    <% end %>
+  </div>
+
   <ul>
     <li><%= link_to 'home', root_path %></li>
     <li><%= link_to 'about', about_path %></li>

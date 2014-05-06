@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to root_path, notice: 'Created'
+      redirect_to @post, notice: "Created #{@post.title}"
     else
       render :new
     end

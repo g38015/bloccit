@@ -5,4 +5,10 @@ Bloccit::Application.routes.draw do
 
   resources :posts
 
+  namespace :api, defaults: {format: :json} do
+    namespace :v1 do
+      resources :posts, only: [:index]
+    end
+  end
+
 end
