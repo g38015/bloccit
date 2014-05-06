@@ -8,6 +8,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'turbolinks'
+gem 'faker'
 
 group :development do
   gem 'sqlite3'
