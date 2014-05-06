@@ -1,11 +1,13 @@
 <%= form_for(@post) do |f| %>
   <div class='form-group'>
     <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
+    <%= f.text_field :title, class: 'form-control', placeholder: "Enter post title" %>
   </div>
   <div class="form-group">
     <%= f.label :body %>
-    <%= f.text_area :body, class: 'form-control' %>
+    <%= f.text_area :body, class: 'form-control', placeholder: "Enter post body" %>
   </div>
-  <%= f.submit class: 'btn btn-primary' %>
+  <div>
+    <%= f.submit class: 'btn btn-success' %>
+  </div>
 <% end %>
