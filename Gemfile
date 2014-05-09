@@ -10,6 +10,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'turbolinks'
 gem 'faker'
 gem 'bootstrap-sass', '~> 3.1.1'
+gem 'devise'
+gem 'figaro'
 
 group :development do
   gem 'sqlite3'
