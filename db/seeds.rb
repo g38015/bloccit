@@ -22,6 +22,7 @@ users = User.all
 # Create Posts
 50.times do
   Post.create(
+    user:   users.sample,
     title: Faker::Lorem.sentence,
     body: Faker::Lorem.paragraph
   )
@@ -31,6 +32,7 @@ posts = Post.all
 # Create Comments
 100.times do 
   Comment.create(
+    #user: users.sample,
     post: posts.sample,
     body: Faker::Lorem.paragraph
   )
@@ -38,7 +40,7 @@ end
 
 User.first.update_attributes(
   email: 'phitchcock@me.com',
-  password: 'helloworld',
+  password: 'helloworld'
 )
 
 puts "Seed finished"

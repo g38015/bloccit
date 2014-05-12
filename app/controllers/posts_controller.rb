@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(params.require(:post).permit(:title, :body))
+    @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to @post, notice: "Created #{@post.title}"
     else

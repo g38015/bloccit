@@ -6,7 +6,7 @@
         <%= link_to(post.title, post) %>
       </h4>
       <small>
-        submitted <%= time_ago_in_words(post.created_at) %> ago by #TODO fix user association<br/>
+        submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %><br/>
         <%= post.comments.count %> Comments
       </small>
     </div>
