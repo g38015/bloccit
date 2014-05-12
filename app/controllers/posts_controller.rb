@@ -8,32 +8,42 @@ class PostsController < ApplicationController
   end
 
   def show
+    @topic = Topic.find(params[:topic_id])
   end
 
   def new
+    @topic = Topic.find(params[:topic_id])
     @post = Post.new
     authorize @post
   end
 
   def create
+    @topic = Topic.find(params[:topic_id])
     @post = current_user.posts.build(post_params)
+    @post.topic = @topic
+
     authorize @post
     if @post.save
-      redirect_to @post, notice: "Created #{@post.title}"
+      redirect_to [@topic, @post], notice: "Created #{@post.title}"
     else
+      flash[:error] = 'Error saving post, please try again'
       render :new
     end
   end
 
   def edit
+    @topic = Topic.find(params[:topic_id])
     authorize @post
   end
 
   def update
+    @topic = Topic.find(params[:topic_id])
+
     authorize @post
     if @post.update(post_params)
-      redirect_to @post, notice: 'Updated'
+      redirect_to [@topic, @post], notice: 'Updated'
     else
+      flas[:error] = "Error saving post, please try again"
       render :edit
     end
   end
