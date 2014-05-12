@@ -8,11 +8,14 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'turbolinks'
+
+# Added Gems
 gem 'faker'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'devise'
 gem 'figaro'
 gem 'pundit'
+gem 'redcarpet'
 
 group :development do
   gem 'sqlite3'
