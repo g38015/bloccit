@@ -10,6 +10,6 @@
   </div>
   <div class="col-md-8">
     <%= render 'shared/errors', obj: @post %>
-    <%= render 'form' %>
+    <%= render partial: 'form', locals: {topic: @topic, post: @post} %>
   </div>
 </div>
