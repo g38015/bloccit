@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    authorize @posts
   end
 
   def show
@@ -11,10 +12,12 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    authorize @post
   end
 
   def create
     @post = current_user.posts.build(params.require(:post).permit(:title, :body))
+    authorize @post
     if @post.save
       redirect_to @post, notice: "Created #{@post.title}"
     else
@@ -23,9 +26,11 @@ class PostsController < ApplicationController
   end
 
   def edit
+    authorize @post
   end
 
   def update
+    authorize @post
     if @post.update(post_params)
       redirect_to @post, notice: 'Updated'
     else
