@@ -10,6 +10,7 @@ Bloccit::Application.routes.draw do
   end
 
   devise_for :users
+  resources :users, only: [:update]
 
   namespace :api, defaults: {format: :json} do
     namespace :v1 do
