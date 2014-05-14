@@ -1,0 +1,7 @@
+<div class="media">
+  <% @post.comments.each do |comment| %>
+  <div class="well">
+    <%= comment.body %>
+  </div>
+  <% end %>
+</div>
