@@ -7,6 +7,10 @@ module Api
       def index
         respond_with Post.all.order('title ASC')
       end
+
+      def show
+        respond_with Post.find(params[:id])
+      end
           
     end
   end

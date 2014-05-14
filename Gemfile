@@ -21,6 +21,7 @@ gem 'mini_magick'
 gem 'fog'
 gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'sqlite3'
