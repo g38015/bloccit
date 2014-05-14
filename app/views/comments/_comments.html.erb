@@ -2,6 +2,11 @@
   <% @post.comments.each do |comment| %>
   <div class="well">
     <%= comment.body %>
+    <% if policy(comment).destroy? %>
+    <%= link_to "Delete", [@topic, @post, comment], method: :delete, class: 'btn btn-danger', data: {confirm: 'Really?'} %>
+  <% end %>
   </div>
   <% end %>
 </div>
+
+

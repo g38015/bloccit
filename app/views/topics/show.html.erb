@@ -16,5 +16,8 @@
       <%= link_to "new post", new_topic_post_path(@topic), class: 'btn btn-success' %>
       <%#= link_to "new post", [:new, @topic, :post], class: 'btn btn-success' %>
     <% end %>
+    <% if policy(@topic).destroy? %>
+      <%= link_to 'Delete', @topic, method: :delete, class: 'btn btn-danger', data: {confirm: "Really?"} %>
+    <% end %>
   </div>
 </div>

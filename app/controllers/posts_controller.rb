@@ -50,8 +50,15 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
-    redirect_to root_path, notice: 'Destroyed'
+    @topic = Topic.find(params[:topic_id])
+
+    title = @post.title
+    authorize @post
+    if @post.destroy
+      redirect_to @topic, notice: "\"#{title}\" was deleted"
+    else
+      render :show, notice: "error deleting post"
+    end
   end
 
   private
