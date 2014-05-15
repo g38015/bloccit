@@ -1,4 +1,5 @@
 <div class="media">
+  <%= render partial: 'votes/voter', locals: {topic: @topic, post: post} %>
   <%= image_tag(post.post_image.thumb.url, class: 'pull-left') %>
   <div class="media-body">
     <h4 class="media-heading">
