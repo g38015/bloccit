@@ -20,10 +20,12 @@
 <br/>
 
 <div class="row">
+  <div class="col-md-8">
   <div class="tabbable tabs-left">
     <ul class="nav nav-tabs">
       <li class="active"><a href="#posts" data-toggle="tab">Posts</a></li>
       <li><a href="#comments" data-toggle="tab">Comments</a></li>
+      <li><a href="#favorites" data-toggle="tab">Favorites</a></li>
     </ul>
     <div class="tab-content">
       <div class="tab-pane active" id="posts">
@@ -32,6 +34,15 @@
       <div class="tab-pane" id="comments">
         <%= render @user.comments %>
       </div>
+      <div class="tab-pane" id="favorites">
+        <% @user.favorites.each do |fav| %>
+          <div class="well">
+            <h3><%= fav.post.title %></h3>
+            <p><%= fav.post.body %></p>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
+</div>
 </div>
