@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
 
-  before_action :set_topic, only: [:show, :edit, :update]
+  before_action :set_topic, only: [:show, :edit, :update, :destroy]
 
   def index
     @topics = Topic.visible_to(current_user).paginate(page: params[:page], per_page: 10)
@@ -43,7 +43,6 @@ class TopicsController < ApplicationController
   end
 
   def destroy
-    @topic = Topic.find(params[:id])
     name = @topic.name
 
     authorize @topic
@@ -61,7 +60,7 @@ class TopicsController < ApplicationController
   end
 
   def set_topic
-    @topic = Topic.find(params[:id])
+    @topic = Topic.friendly.find(params[:id])
   end
 
 end

@@ -15,7 +15,7 @@ class VotesController < ApplicationController
   private
 
   def setup
-    @topic = Topic.find(params[:topic_id])
+    @topic = Topic.friendly.find(params[:topic_id])
     @post = @topic.posts.find(params[:post_id])
 
     @vote = @post.votes.where(user_id: current_user.id).first
