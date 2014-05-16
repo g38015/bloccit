@@ -1,17 +1,18 @@
 class FavoritesController < ApplicationController
 
   def create
-    @topic = Topic.find(params[:topic_id])
-    @post = @topic.posts.find(params[:post_id])
-    favorite = current_user.favorites.build(post: @post)
+    # @topic = Topic.find(params[:topic_id])
+    # @post = @topic.posts.find(params[:post_id])
+    # favorite = current_user.favorites.build(post: @post)
 
-    authorize favorite
-    if favorite.save
-      redirect_to [@topic, @post], notice: "Favorited Post"
-    else
-      flash[:error] = 'Unalbe to favorite please try again'
-      redirect_to [@topic, @post]
-    end
+    # authorize favorite
+    # if favorite.save
+    #   redirect_to [@topic, @post], notice: "Favorited Post"
+    # else
+    #   flash[:error] = 'Unalbe to favorite please try again'
+    #   redirect_to [@topic, @post]
+    # end
+    binding.pry
   end
 
   def destroy

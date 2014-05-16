@@ -1,9 +1,9 @@
 <div class="media">
-  <%= render partial: 'votes/voter', locals: {topic: @topic, post: post} %>
+  <%= render partial: 'votes/voter', locals: {post: post} %>
   <%= image_tag(post.post_image.thumb.url, class: 'pull-left') %>
   <div class="media-body">
     <h4 class="media-heading">
-      <%= link_to (markdown post.title), [@topic, post] %>
+      <%= link_to (markdown post.title), [post.topic, post] %>
     </h4>
      <small>
       <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
