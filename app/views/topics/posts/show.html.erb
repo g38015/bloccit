@@ -12,7 +12,7 @@
     </small>
     <p><%= markdown @post.body %></p>
     <h3>Comments</h3>
-    <%= render @comments %>
+    <%= render partial: 'comments/comment', collection: @comments %>
     <%= render partial: 'comments/form', locals: {topic: @topic, post: @post, comment: @comment} %>
   </div>
 
