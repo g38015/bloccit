@@ -4,15 +4,20 @@ class CommentsController < ApplicationController
   def create
     @topic = Topic.friendly.find(params[:topic_id])
     @post = Post.friendly.find(params[:post_id])
-    @comment = Comment.new(comment_params)
+    @comments = @post.comments
+
+    @comment = current_user.comments.build(comment_params)
     @comment.post = @post
-    @comment.user = current_user
+    @new_comment = Comment.new
+
     if @comment.save
       flash[:notice] = "created comment"
-      redirect_to topic_post_path(@topic, @post)
     else
       flash[:error] = "comment did not save"
-      render 'posts/show'
+    end
+
+    respond_with(@comment) do |f|
+      f.html {redirect_to [@topic, @post]}
     end
   end
 
