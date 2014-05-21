@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.1'
 
 gem 'rails', '4.0.2'
 gem 'sass-rails', '~> 4.0.0'
@@ -11,7 +11,7 @@ gem 'turbolinks'
 
 # Added Gems
 gem 'faker'
-gem 'bootstrap-sass', '~> 3.1.1'
+gem 'bootstrap-sass'
 gem 'devise'
 gem 'figaro'
 gem 'pundit'
@@ -19,15 +19,17 @@ gem 'redcarpet'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
-gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'newrelic_rpm'
-gem 'friendly_id', '~> 5.0.0'
+gem 'friendly_id'
 
 
 group :development do
   gem 'sqlite3'
   gem 'pry'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 group :production do
