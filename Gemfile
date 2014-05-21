@@ -25,11 +25,12 @@ gem 'newrelic_rpm'
 gem 'friendly_id'
 
 
-group :development do
+group :development, :test do
   gem 'sqlite3'
   gem 'pry'
   gem 'rspec-rails'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'database_cleaner'
 end
 
 group :production do
